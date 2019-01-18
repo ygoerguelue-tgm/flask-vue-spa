@@ -3,7 +3,7 @@ python:
   - 3.7_dev
 
 before_script:
-      - cd $TRAVIS_BUILD_DIR
+  - cd $TRAVIS_BUILD_DIR
 
 install:
   - npm install
