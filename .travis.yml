@@ -8,6 +8,8 @@ before_script:
 install:
   - npm install
   - pip install -r backend/requirements.txt
+  - python run.py & sleep 20
 
 script:
   - pytest
+
