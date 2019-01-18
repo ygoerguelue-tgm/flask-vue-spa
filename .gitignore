@@ -14,3 +14,10 @@ backend/venv
 
 # macOs
 .DS_Store
+
+
+.idea
+node_modules
+venv
+.pytest_cache
+package-lock.json
