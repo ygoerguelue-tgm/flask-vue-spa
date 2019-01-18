@@ -1,15 +1,36 @@
-language: python
-python:
-  - 3.7-dev
+matrix:
+  include:
+    - language: python
+      python:
+        - "3.7-dev"
+      env:
+        - TOXENV=py37
+      install:
+        - pip install tox
+      before_script:
+        - cd $TRAVIS_BUILD_DIR
+      script:
+        - tox
+      cache:
+        directories:
+          - ~/.npm
+          - ~/.cache
 
-before_script:
-  - cd $TRAVIS_BUILD_DIR
 
-install:
-  - npm install
-  - pip install -r backend/requirements.txt
-  - python run.py & sleep 20
 
-script:
-  - pytest
+
+#language: python
+#python:
+#  - 3.7-dev
+
+#before_script:
+#  - cd $TRAVIS_BUILD_DIR
+
+#install:
+#  - npm install
+#  - pip install -r backend/requirements.txt
+#  - python run.py & sleep 20
+
+#script:
+#  - pytest
 

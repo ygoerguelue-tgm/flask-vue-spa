@@ -16,15 +16,11 @@ class test(unittest.TestCase):
         print(res.json())
         assert "randomNumber" in res.json()
 
-
     def test_random(client):
         res = requests.get('http://localhost:5000/api/random')
         print(res.json())
         print(res.json()['randomNumber'])
-        assert res.json()['randomNumber'] <= 100
-        assert res.json()['randomNumber'] >= 1
-
-
+        assert res.json()['randomNumber'] <= 100 & res.json()['randomNumber'] >= 1
 
 if __name__ == '__main__':
     unittest.main()
